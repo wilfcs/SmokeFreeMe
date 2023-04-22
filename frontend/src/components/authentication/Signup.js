@@ -5,7 +5,8 @@ import axios from "axios";
 import { useHistory } from "react-router";
 const Signup = () => {
   const toast = useToast();
-  const [show, setShow] = useState(false);
+  const [show1, setShow1] = useState(false);
+  const [show2, setShow2] = useState(false);
   const [email, setemail] = useState();
   const [name, setname] = useState();
   const [password, setpassword] = useState();
@@ -13,8 +14,11 @@ const Signup = () => {
   const [pic, setpic] = useState();
   const [loading, setLoading] = useState(false);
   const history = useHistory();
-  const handleClick = () => {
-    setShow(!show);
+  const handleClick1 = () => {
+    setShow1(!show1);
+  }
+  const handleClick2 = () => {
+    setShow2(!show2);
   }
   const submitHandler = async() => {
     setLoading(true);
@@ -67,6 +71,7 @@ const Signup = () => {
       localStorage.setItem("userInfo", JSON.stringify(data));
       setLoading(false);
       history.push("/chats");
+      window.location.reload(false);
     } catch (error) {
       toast({
         title: "Error Occured!",
@@ -78,6 +83,7 @@ const Signup = () => {
       });
       setLoading(false);
     }
+
   };
   const sum = (e) => {
     setemail(e.target.value)
@@ -157,13 +163,13 @@ const Signup = () => {
         <InputGroup size="md">
           <Input
             autoComplete="off"
-            type={show ? "text" : "password"}
+            type={show1 ? "text" : "password"}
             placeholder="Enter Password"
             onChange={(e) => setpassword(e.target.value)}
           />
           <InputRightElement width="4.5rem">
-            <Button bg="grey.300" h="1.75rem" size="sm" onClick={handleClick}>
-              {show ? "Hide" : "Show"}
+            <Button bg="grey.300" h="1.75rem" size="sm" onClick={handleClick1}>
+              {show1 ? "Hide" : "Show"}
             </Button>
           </InputRightElement>
         </InputGroup>
@@ -175,13 +181,13 @@ const Signup = () => {
         <InputGroup size="md">
           <Input
             autoComplete="off"
-            type={show ? "text" : "password"}
+            type={show2 ? "text" : "password"}
             placeholder="Enter Password"
             onChange={(e) => setconfirmpassword(e.target.value)}
           />
           <InputRightElement width="4.5rem">
-            <Button bg="grey.300" h="1.75rem" size="sm" onClick={handleClick}>
-              {show ? "Hide" : "Show"}
+            <Button bg="grey.300" h="1.75rem" size="sm" onClick={handleClick2}>
+              {show2 ? "Hide" : "Show"}
             </Button>
           </InputRightElement>
         </InputGroup>

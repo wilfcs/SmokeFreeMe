@@ -1,19 +1,26 @@
-const express=require("express");
-const { chats } = require("./data/data");
-const dotenv =require("dotenv");
+const express = require("express");
 const connectDB = require("./config/db");
-const userRoutes=require("./routes/userRoutes");
+const dotenv = require("dotenv");
+const userRoutes = require("./routes/userRoutes");
+const chatRoutes = require("./routes/chatRoutes");
+const colors = require("colors");
+const { notFound, errorHandler } = require("./middleware/errorMiddleware");
+const messageRoutes = require("./routes/messageRoutes");
+const app = express();
 dotenv.config();
 connectDB();
-const app=express();
-const PORT = 5000;
-app.use(express.json());// to accept json data
-app.listen(PORT,console.log("server started at localhost 5000"))
-app.get("/",(req,res)=>{
-res.send("api is running")
+
+app.use(express.json()); //to accept JSON data
+
+app.get("/", (req, res) => {
+  res.send("API is running...");
 });
-// app.get("/api/chat",(req,res)=>{
-//     res.send(chats)
-// })
-app.use("/api/user",userRoutes);
-// here we created an end point 
+
+app.use("/api/user", userRoutes);
+app.use("/api/chat", chatRoutes);
+app.use("/api/message", messageRoutes);
+app.use(notFound);
+app.use(errorHandler);
+
+const PORT = process.env.PORT;
+app.listen(PORT, console.log(`Server started on port ${PORT}`.yellow.bold));
