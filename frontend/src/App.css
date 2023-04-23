@@ -1,9 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Alkatra&family=Work+Sans:ital,wght@0,300;0,900;1,100;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Concert+One&family=Kanit:ital,wght@0,400;1,500&family=Work+Sans:wght@300&display=swap");
+
 .App {
   min-height: 100vh;
   display: flex;
+  background-image: url("./background.jpg");
   background-position: center;
-  background-image:url("./background.png");
   background-size: cover;
-  background-position: center;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(136, 136, 136, 0.281);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
