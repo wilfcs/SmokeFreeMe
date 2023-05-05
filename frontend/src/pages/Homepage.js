@@ -10,8 +10,8 @@ import {
   TabPanel,
 } from "@chakra-ui/react";
 
-import Login from "../components/Authentication/Login";
-import Signup from "../components/Authentication/Signup";
+import Login from "../components/authentication/Login";
+import Signup from "../components/authentication/Signup";
 import { useHistory } from "react-router-dom";
 const Homepage = () => {
   const history = useHistory();

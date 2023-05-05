@@ -20,3 +20,77 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+
+.tagline{
+  font-size: small;
+}
+
+.aifill{
+  font-size: large;
+}
+
+.accordion {
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  width: 80vw;
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.accordion-header h3 {
+  margin: 0;
+}
+
+.accordion-header span {
+  font-size: 20px;
+}
+
+.accordion-content {
+  padding: 10px;
+}
+
+.accord-div{
+  width: 99vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+}
+
+.quitnav{
+  width: 100vw;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 11px 30px 11px 30px;
+  font-size: large;
+}
+
+.point{
+  cursor: pointer;
+}
+
+.quit-maindiv{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.quit-title{
+  font-size: xx-large;
+  font-weight: 600;
+  color: rgb(68, 68, 68);
+}

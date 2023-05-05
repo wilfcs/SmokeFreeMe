@@ -5,6 +5,7 @@ import { useDisclosure } from "@chakra-ui/hooks";
 import { Input } from "@chakra-ui/input";
 import { getSender } from "../../config/ChatLogic";
 import { BellIcon, ChevronDownIcon } from "@chakra-ui/icons";
+import { useHistory } from "react-router-dom";
 import {
   Avatar,
   Drawer,
@@ -14,6 +15,8 @@ import {
   DrawerOverlay,
   useToast,
 } from "@chakra-ui/react";
+
+import { AiFillHome } from "react-icons/ai";
 
 import { Spinner } from "@chakra-ui/spinner";
 import { Box, Text } from "@chakra-ui/layout";
@@ -28,7 +31,6 @@ import {
 import { Tooltip } from "@chakra-ui/tooltip";
 import { ChatState } from "../../Context/ChatProvider";
 import ProfileModal from "./ProfileModal";
-import { useHistory } from "react-router-dom";
 import ChatLoading from "../ChatLoading";
 import UserListItem from "../UserAvatar/UserListItem";
 import NotificationBadge from "react-notification-badge";
@@ -114,6 +116,10 @@ const SideDrawer = () => {
       });
     }
   };
+  // let navigate = useNavigate();
+  const goToHome = ()=>{
+   history.push("/quitsteps");
+  }
   return (
     <>
       <Box
@@ -135,9 +141,15 @@ const SideDrawer = () => {
         </Tooltip>
 
         <Text fontSize="2xl" fontFamily="Work sans">
-          Social Guru
+          SmokeFreeMe
         </Text>
         <div>
+          <Menu className="aifill">
+            <MenuButton pr={2} onClick={goToHome}>
+              <AiFillHome />
+            </MenuButton>
+          </Menu>
+
           <Menu>
             <MenuButton p={1}>
               <NotificationBadge
@@ -163,6 +175,7 @@ const SideDrawer = () => {
               ))}
             </MenuList>
           </Menu>
+
           <Menu>
             <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
               <Avatar
