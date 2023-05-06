@@ -1,6 +1,7 @@
 import React from 'react'
 import Accordion  from "../components/miscellaneous/Accordion";  
 import QuitNavbar from "../components/miscellaneous/QuitNavbar";
+import { AiFillPlayCircle } from "react-icons/ai";
 
 const toChat = ()=>{
 
@@ -42,7 +43,9 @@ const QuitSteps = () => {
           title="Stay positive:"
           content="Remember that quitting smoking is a process, and it's normal to have setbacks along the way. Don't beat yourself up if you slip up, just get back on track and keep moving forward."
         />
-        />
+        <a href="https://www.youtube.com/watch?v=xHvvO4fLePA" target="_blan">
+          <AiFillPlayCircle className="play-button" />
+        </a>
       </div>
     </div>
   );

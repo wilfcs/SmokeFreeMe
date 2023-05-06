@@ -94,3 +94,14 @@
   font-weight: 600;
   color: rgb(68, 68, 68);
 }
+
+.play-button{
+  font-size: 200px;
+  cursor: pointer;
+  color: rgb(255, 124, 124);
+}
+
+.play-button:hover{
+  font-size: 205px;
+  color: rgb(255, 110, 110);
+}
